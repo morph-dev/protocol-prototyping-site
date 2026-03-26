@@ -6,7 +6,7 @@ A static website that aggregates and displays work from the Protocol Prototyping
 
 1. Fork this repository
 2. Edit `TEAM_MEMBERS.txt` and add your entry in the format: `username/repo-name/Display Name`
-   - Example: `alice/protocol-research/Alice Smith`
+   - Example: `alice/protocol-research/Alice Smith/alice_twitter`
 3. Submit a PR with your addition
 
 ## Setting Up Your Work Repository
@@ -15,6 +15,13 @@ Create a repository with a `work.json` file in the root containing an array of y
 
 ```json
 [
+  {
+    "title": "Payload Chunking",
+    "description": "Deep dive analysis of Payload Chunking designs",
+    "label": "CL,EL,DL",
+    "url": "https://ethereum-magicians.org/t/payload-chunking/28067",
+    "date": "2026-03-24"
+  },
   {
     "title": "EIP-4844 Blob Transaction Analysis",
     "description": "Deep dive into blob transaction implementation and its impact on L2 scaling solutions",
@@ -36,7 +43,7 @@ Create a repository with a `work.json` file in the root containing an array of y
 
 - **title**: Name of your project or research
 - **description**: Brief description (1-2 sentences)
-- **label**: Category - must be one of: `CL`, `EL`, `MEV-Boost`, `DL`
+- **label**: Category - must be comma separated list of: `CL`, `EL`, `MEV-Boost`, `DL`
 - **url**: Link to your project (GitHub repo, blog post, etc.)
 - **date**: Date of the work (format: YYYY-MM-DD)
 

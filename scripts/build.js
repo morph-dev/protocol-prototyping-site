@@ -23,11 +23,16 @@ async function generateWorkItemsHTML(workItems) {
             dateDisplay = `${months[date.getMonth()]}/${date.getFullYear()}`;
         }
 
+        let labels = '';
+        if (item.label) {
+            labels = item.label.split(',').map((l) => `<span class="work-label label-${l}">${l}</span>`).join('');
+        }
+
         return `
         <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="work-item ${index >= 6 ? 'work-item-hidden' : ''}" data-label="${item.label}" data-date="${item.date || ''}" data-author="${item.author || ''}">
             <div class="work-header">
                 <h3 class="work-title">${escapeHtml(item.title)}</h3>
-                <span class="work-label label-${item.label}">${item.label}</span>
+                ${labels ? `<div class="work-label-container">${labels}</div>` : ''}
             </div>
             <p class="work-description">${escapeHtml(item.description)}</p>
             <div class="work-footer">
